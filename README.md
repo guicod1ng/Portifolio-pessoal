@@ -23,4 +23,4 @@ https://guicod1ng.github.io/Portifolio-pessoal/
 
 - GitHub: [guicod1ng](https://github.com/guicod1ng)
 - Email: lerichlesss@gmail.com
-- LinkedIn: (https://www.linkedin.com/in/guilhermecode/)
+- LinkedIn: [guilhermecode](https://www.linkedin.com/in/guilhermecode/)

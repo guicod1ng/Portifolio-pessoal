@@ -338,6 +338,7 @@ body {
     padding: 16px 20px;
     border-right: none;
     border-bottom: 1px solid var(--border);
+    display: flex !important;
   }
 
   .sidebar-photo {
@@ -346,7 +347,15 @@ body {
   }
 
   .sidebar-terminal {
-    display: none;
+    display: block;
+    flex: 1;
+    max-width: 250px;
+  }
+
+  .sidebar-terminal .mini-terminal {
+    font-size: 0.55rem;
+    padding: 8px 10px;
+    min-height: auto;
   }
 
   .main-content {
@@ -354,7 +363,7 @@ body {
     max-width: 100%;
     padding: 20px;
     flex: 0 0 auto;
-}
+  }
 
   .hero h1 { font-size: 1.8rem; }
   .about-stack-grid { grid-template-columns: 1fr; }

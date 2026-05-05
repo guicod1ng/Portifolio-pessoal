@@ -3,221 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Guilherme Lopes - Desenvolvedor Back-end especializado em Node.js, TypeScript e PostgreSQL. APIs robustas e escaláveis." />
-  <title>Guilherme Lopes | Desenvolvedor Back-end</title>
-  
+  <meta name="description" content="Guilherme Lopes - Desenvolvedor Back-end. TypeScript, Node.js, PostgreSQL, AWS Lambda." />
+  <title data-i18n="pageTitle">Guilherme Lopes | Desenvolvedor Back-end</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="/assets/favicon.ico" type="image/png" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="page-shell">
-    <header class="topbar">
-      <div class="brand" data-i18n="brand">GUILHERME LOPES DEV</div>
-      <div class="topbar-actions">
-        <button class="theme-toggle" aria-label="Alternar idioma" id="langToggle">
-          EN
-        </button>
-        <button class="theme-toggle" aria-label="Alternar entre modo claro e escuro" id="themeToggle">
-          Modo claro
-        </button>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-photo">
+        <img src="./assets/perfil.jpeg" alt="Guilherme Lopes" />
       </div>
-    </header>
+      <div class="sidebar-terminal">
+        <div class="mini-terminal">
+          <p><span class="prompt">$</span> curl -s api/ping</p>
+          <p class="response">{ "status": "online" }</p>
+          <p><span class="prompt">$</span> npm test</p>
+          <p class="response">17 passed, 0 failed</p>
+          <p><span class="prompt">$</span> docker compose up</p>
+          <p class="response">Container started</p>
+          <p class="cursor">█</p>
+        </div>
+      </div>
+    </aside>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero section-fade">
-        <div class="hero-grid">
+    <div class="main-content">
+      <header class="topbar">
+        <div class="brand" data-i18n="brand">GUILHERME LOPES DEV</div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="langToggle">EN</button>
+          <button class="theme-toggle" id="themeToggle">Modo claro</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero section-fade">
           <div class="hero-content">
             <span class="eyebrow" data-i18n="eyebrow">Desenvolvedor Back-end</span>
-            <h1 data-i18n="heroTitulo">Construo APIs robustas, escaláveis e de alta performance.</h1>
-            <p data-i18n="heroDesc">Estudante de Engenharia de Software na Gran Facultad e. Construo APIs completas com TypeScript, Prisma, testes automatizados com Jest e deploy em nuvem.</p>
-            
+            <h1 data-i18n="heroTitulo">Eu construo a parte dos sistemas que você <span class="accent">nunca vê</span>, mas que mantém tudo de pé.</h1>
+            <p data-i18n="heroDesc">APIs, bancos de dados, autenticação e deploy. TypeScript, Node.js e PostgreSQL. Sem mágica, só engenharia.</p>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary" data-i18n="verProjetos">Ver projetos</a>
-              <a href="#contact" class="btn btn-secondary" data-i18n="falarComigo">Falar comigo</a>
+              <a href="#contact" class="btn btn-secondary" data-i18n="falarComigo">Contato</a>
             </div>
           </div>
-          
-          <div class="hero-image">
-            <img 
-             src="./assets/WhatsApp Image 2026-04-27 at 14.42.42.jpeg"
-              alt="Guilherme Lopes - Desenvolvedor Back-end" 
-              loading="lazy"
-              width="600"
-              height="600"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SOBRE -->
-      <section id="about" class="section section-fade">
-        <div class="section-label" data-i18n="sobreSectionLabel">Sobre mim</div>
-        <div class="about-grid">
-          <div class="card card-soft about-card">
-            <h2 data-i18n="sobreTitulo">Quem sou</h2>
-            <p data-i18n="sobreDesc">Tenho 20 anos, sou estudante de Engenharia de Software na Gran Facultad e. Focado em back-end, construo APIs confiáveis, performáticas e bem estruturadas. Gosto de código limpo e de fácil manutenção.</p>
-          </div>
-          
-          <div class="card card-soft tech-summary">
-            <h2 data-i18n="techTitulo">Principais tecnologias</h2>
-            <ul>
-              <li>TypeScript</li>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>Prisma</li>
-              <li>PostgreSQL</li>
-              <li>Jest</li>
-              <li>Docker</li>
-              <li>Git & GitHub</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- TECH STACK -->
-      <section id="stack" class="section section-fade">
-        <div class="section-header">
-          <div>
-            <div class="section-subtitle">Tech Stack</div>
-            <h2 data-i18n="stackTitulo">Tecnologias que uso</h2>
-          </div>
-        </div>
-        <div class="stack-grid">
-          <div class="stack-card">
-            <h3 data-i18n="backendTitulo">Backend</h3>
-            <div class="tag-list">
-              <span>TypeScript</span>
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>Prisma</span>
+        <section id="about" class="section section-fade">
+          <div class="section-label" data-i18n="sobreSectionLabel">Sobre</div>
+          <div class="about-stack-grid">
+            <div class="about-text">
+              <h2 data-i18n="sobreTitulo">Quem sou</h2>
+              <p data-i18n="sobreDesc">Tenho 20 anos e curso Engenharia de Software na Gran Faculdade. Foco em back-end: construo APIs que escalam, testo o que entrego e documento cada decisão técnica. Trabalho com TypeScript, Prisma, PostgreSQL e AWS Lambda. Docker e CI/CD estão no meu fluxo diário.</p>
             </div>
-          </div>
-          <div class="stack-card">
-            <h3 data-i18n="bancoTitulo">Banco de Dados</h3>
-            <div class="tag-list">
-              <span>PostgreSQL</span>
-              <span>MySQL</span>
-            </div>
-          </div>
-          <div class="stack-card">
-            <h3 data-i18n="devopsTitulo">Ferramentas & DevOps</h3>
-            <div class="tag-list">
-              <span>Git & GitHub</span>
-              <span>Docker</span>
-              <span>Jest</span>
-              <span>Render</span>
-              <span>Neon.tech</span>
-              <span>Postman</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJETOS -->
-      <section id="projects" class="section section-fade">
-        <div class="section-header">
-          <div>
-            <div class="section-subtitle" data-i18n="projetosSubtitle">Projetos</div>
-            <h2 data-i18n="projetosTitulo">Trabalhos em destaque</h2>
-
-          </div>
-        </div>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div>
-              <span class="project-tag">TypeScript</span>
-              <h3 data-i18n="projeto1Titulo">API TypeScript com Prisma & Testes</h3>
-              <p data-i18n="projeto1Desc">API REST tipada com TypeScript, Prisma ORM, 11 testes automatizados (Jest + Supertest) e container Docker.</p>
-            </div>
-            <div class="project-meta">
-              <span>TypeScript • Prisma • PostgreSQL • Jest • Docker</span>
-              <div class="project-links">
-                <a href="https://github.com/guicod1ng/api-ts" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://api-ts-xlri.onrender.com/ping" target="_blank" rel="noopener" data-i18n="verDeploy">Ver Deploy</a>
+            <div class="stack-inline">
+              <h2 data-i18n="techTitulo">Stack principal</h2>
+              <div class="stack-icons">
+                <div class="stack-icon"><i class="fab fa-node-js"></i> Node.js</div>
+                <div class="stack-icon"><i class="fas fa-code"></i> TypeScript</div>
+                <div class="stack-icon"><i class="fas fa-database"></i> PostgreSQL</div>
+                <div class="stack-icon"><i class="fas fa-cubes"></i> Prisma</div>
+                <div class="stack-icon"><i class="fab fa-aws"></i> AWS Lambda</div>
+                <div class="stack-icon"><i class="fab fa-docker"></i> Docker</div>
+                <div class="stack-icon"><i class="fas fa-vial"></i> Jest</div>
+                <div class="stack-icon"><i class="fab fa-github"></i> GitHub Actions</div>
               </div>
             </div>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <span class="project-tag">API REST</span>
-              <h3 data-i18n="projeto2Titulo">API de Clientes com Autenticação</h3>
-              <p data-i18n="projeto2Desc">API completa com Node.js, Express e PostgreSQL. CRUD de clientes, autenticação JWT, arquitetura em camadas (routes/controllers/services) e deploy no Render.</p>
-            </div>
-            <div class="project-meta">
-              <span>Node.js • Express • PostgreSQL • JWT</span>
-              <div class="project-links">
-                <a href="https://github.com/guicod1ng/API-Node-POstgreSQL" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://api-clientes-jqkq.onrender.com/ping" target="_blank" rel="noopener" data-i18n="verDeploy">Ver Deploy</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div>
-              <span class="project-tag">Full Stack</span>
-              <h3 data-i18n="projeto3Titulo">Sistema de Login e Dashboard</h3>
-              <p data-i18n="projeto3Desc">Interface web com Bootstrap 5 consumindo API própria. Registro, login, CRUD de clientes e agendamentos com proteção JWT. Deploy no GitHub Pages.</p>
-            </div>
-            <div class="project-meta">
-              <span>HTML5 • Bootstrap 5 • JavaScript • API REST</span>
-              <div class="project-links">
-                <a href="https://github.com/guicod1ng/FrontEnd-login" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://guicod1ng.github.io/FrontEnd-login" target="_blank" rel="noopener" data-i18n="verDeploy">Ver Deploy</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- CONTATO -->
-      <section id="contact" class="section section-fade contact-section">
-        <div class="section-header">
-          <div>
-            <div class="section-subtitle" data-i18n="contatoSubtitle">Contato</div>
-            <h2 data-i18n="contatoTitulo">Vamos trabalhar juntos</h2>
-
           </div>
-        </div>
-        <div class="contact-grid">
-          <div class="card card-soft contact-info">
-            <p data-i18n="contatoDesc">Estou aberto a novas oportunidades como Desenvolvedor Back-end. Vamos conversar sobre como posso contribuir com seu time.</p>
-            
+        </section>
+
+        <section id="projects" class="section section-fade">
+          <div class="section-header">
+            <div>
+              <div class="section-subtitle" data-i18n="projetosSubtitle">Projetos</div>
+              <h2 data-i18n="projetosTitulo">Trabalhos em destaque</h2>
+            </div>
           </div>
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-visual">
+                <div class="mini-terminal">
+                  <p><span class="prompt">></span> POST /chat</p>
+                  <p class="response">"Olá! Como posso ajudar?"</p>
+                </div>
+              </div>
+              <div class="project-info">
+                <span class="project-tag">IA</span>
+                <h3>ChatBot com IA — Groq (Llama 3.3)</h3>
+                <p>Chat inteligente com JWT, widget front-end, 6 testes e CI/CD.</p>
+                <div class="project-links">
+                  <a href="https://github.com/guicod1ng/chatbot-ia" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://chatbot-ia-hhfu.onrender.com" target="_blank" rel="noopener">Deploy</a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-visual">
+                <div class="mini-terminal">
+                  <p><span class="prompt">></span> GET /ping</p>
+                  <p class="response">"online"</p>
+                </div>
+              </div>
+              <div class="project-info">
+                <span class="project-tag">Serverless</span>
+                <h3>API TypeScript na AWS Lambda</h3>
+                <p>API REST serverless com Prisma e PostgreSQL.</p>
+                <div class="project-links">
+                  <a href="https://github.com/guicod1ng/api-lambda" target="_blank" rel="noopener">GitHub</a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card">
+              <div class="project-visual">
+                <div class="mini-terminal">
+                  <p><span class="prompt">></span> npm test</p>
+                  <p class="response">11 passed</p>
+                </div>
+              </div>
+              <div class="project-info">
+                <span class="project-tag">TypeScript</span>
+                <h3>API TypeScript com Prisma & Testes</h3>
+                <p>CRUD, JWT, 11 testes e Docker.</p>
+                <div class="project-links">
+                  <a href="https://github.com/guicod1ng/api-ts" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://api-ts-xlri.onrender.com/ping" target="_blank" rel="noopener">Deploy</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
 
-          <form class="contact-form" id="contactForm" action="mailto:lerichlesss@gmail.com" method="post" encType="text/plain">
-            <label>
-              <span data-i18n="nomeLabel">Nome</span>
-              <input type="text" name="name" data-i18n-placeholder="nomePlaceholder" placeholder="Seu nome" required autocomplete="name" />
-            </label>
-            <label>
-              <span data-i18n="emailLabel">Email</span>
-              <input type="email" name="email" data-i18n-placeholder="emailPlaceholder" placeholder="seu@email.com" required autocomplete="email" />
-            </label>
-            <label>
-              <span data-i18n="mensagemLabel">Mensagem</span>
-              <textarea name="message" rows="5" data-i18n-placeholder="mensagemPlaceholder" placeholder="Escreva sua mensagem..." required></textarea>
-            </label>
-            <button type="submit" class="btn btn-primary" data-i18n="enviar">Enviar mensagem</button>
-          </form>
-        </div>
-      </section>
-    </main>
+        <section id="contact" class="section section-fade contact-section">
+          <div class="section-header">
+            <div>
+              <div class="section-subtitle" data-i18n="contatoSubtitle">Contato</div>
+              <h2 data-i18n="contatoTitulo">Vamos trabalhar juntos</h2>
+            </div>
+          </div>
+          <div class="contact-grid">
+            <p data-i18n="contatoDesc">Estou aberto a oportunidades como Desenvolvedor Back-end.</p>
+            <div class="contact-links">
+              <a href="mailto:lerichlesss@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Email</a>
+              <a href="https://github.com/guicod1ng" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://linkedin.com/in/guilhermecode" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+          </div>
+        </section>
+      </main>
 
-    <footer class="site-footer">
-      <div class="footer-content">
-        <p data-i18n="footerDireitos">© 2026 Guilherme Lopes. Todos os direitos reservados.</p>
-        <div class="footer-links">
-          <a href="https://github.com/guicod1ng" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
-          <a href="mailto:lerichlesss@gmail.com" aria-label="Email">Email</a>
-          <a href="https://linkedin.com/in/guilhermecode" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-        </div>
-      </div>
-    </footer>
+      <footer class="site-footer">
+        <p data-i18n="footerDireitos">© 2026 Guilherme Lopes.</p>
+      </footer>
+    </div>
   </div>
 
   <script src="./assets/lang.js"></script>

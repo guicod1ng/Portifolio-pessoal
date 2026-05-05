@@ -1,72 +1,51 @@
+// script.js
 const themeToggle = document.getElementById('themeToggle');
 const langToggle = document.getElementById('langToggle');
 const root = document.documentElement;
 
-// ====================
-// IDIOMA (i18n)
-// ====================
-
-// Definir tema
 function setTheme(mode) {
   if (mode === 'light') {
     root.setAttribute('data-theme', 'light');
-    themeToggle.textContent = window.i18n.modoEscuro;
   } else {
     root.removeAttribute('data-theme');
-    themeToggle.textContent = window.i18n.modoClaro;
   }
   localStorage.setItem('site-theme', mode);
 }
 
-// Aplicar textos traduzidos ao DOM
 function aplicarTextos() {
   const idioma = window.i18n.idiomaAtual;
-  
-  // Atualizar elementos com data-i18n
-  const elementos = document.querySelectorAll('[data-i18n]');
-  elementos.forEach(el => {
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
     const chave = el.getAttribute('data-i18n');
     if (window.i18n.textos[idioma] && window.i18n.textos[idioma][chave]) {
-      el.textContent = window.i18n.textos[idioma][chave];
+      el.innerHTML = window.i18n.textos[idioma][chave];
     }
   });
-  
-  // Atualizar placeholders com data-i18n-placeholder
-  const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
-  placeholders.forEach(el => {
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const chave = el.getAttribute('data-i18n-placeholder');
     if (window.i18n.textos[idioma] && window.i18n.textos[idioma][chave]) {
       el.setAttribute('placeholder', window.i18n.textos[idioma][chave]);
     }
   });
-  
-  // Atualizar lang do html
+
   document.documentElement.lang = idioma === 'pt' ? 'pt-BR' : 'en';
-  
-  // Atualizar title
+
   if (window.i18n.textos[idioma] && window.i18n.textos[idioma].pageTitle) {
     document.title = window.i18n.textos[idioma].pageTitle;
   }
-  
-  // Atualizar botão de idioma
+
   langToggle.textContent = idioma === 'pt' ? 'EN' : 'PT';
-  
-  // Atualizar tema toggle texto
-  const currentTheme = localStorage.getItem('site-theme') || 'dark';
-  themeToggle.textContent = currentTheme === 'light' ? window.i18n.modoEscuro : window.i18n.modoClaro;
+  themeToggle.textContent = root.hasAttribute('data-theme') ? window.i18n.modoEscuro : window.i18n.modoClaro;
 }
 
-
-// Alternar idioma
 function alternarIdioma() {
-  alternarIdioma_i18n();
+  window.i18n.alternarIdioma_i18n();
   aplicarTextos();
 }
 
-// Inicializar tema (respeita preferência do sistema)
 function initTheme() {
   const savedTheme = localStorage.getItem('site-theme');
-  
   if (savedTheme) {
     setTheme(savedTheme);
   } else {
@@ -75,16 +54,14 @@ function initTheme() {
   }
 }
 
-// Evento do botão tema
 themeToggle.addEventListener('click', () => {
-  const isLight = root.hasAttribute('data-theme') && root.getAttribute('data-theme') === 'light';
+  const isLight = root.hasAttribute('data-theme');
   setTheme(isLight ? 'dark' : 'light');
+  aplicarTextos();
 });
 
-// Evento do botão idioma
 langToggle.addEventListener('click', alternarIdioma);
 
-// Animações de scroll
 const fadeSections = document.querySelectorAll('.section-fade');
 
 const observer = new IntersectionObserver((entries) => {
@@ -101,6 +78,6 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeSections.forEach(section => observer.observe(section));
 
-// Inicialização
 initTheme();
+window.aplicarTextos = aplicarTextos;
 aplicarTextos();

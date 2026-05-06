@@ -34,7 +34,7 @@ const textos = {
     stackTitulo: 'Technologies I use',
     projetosSubtitle: 'Projects',
     projetosTitulo: 'Featured projects',
-    contatoSubtitle: 'Contact',
+    contatoSubtitle: '',
     contatoTitulo: "Let's work together",
     contatoDesc: 'I am open to opportunities as a Back-end Developer.',
     verProjetos: 'View projects',
